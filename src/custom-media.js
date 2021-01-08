@@ -135,6 +135,7 @@ export function convert(id, data) {
     const meta = {
         direct: sources,
         textTracks: data.textTracks,
+        webpage: data.webpage,
         thumbnail: data.thumbnail, // Currently ignored by Media
         live: !!data.live          // Currently ignored by Media
     };
@@ -160,6 +161,12 @@ export function validate(data) {
         if (typeof data.thumbnail !== 'string')
             throw new ValidationError('thumbnail must be a string');
         validateURL(data.thumbnail);
+    }
+
+    if (data.hasOwnProperty('webpage')) {
+        if (typeof data.thumbnail !== 'string')
+            throw new ValidationError('webpage must be a string');
+        validateURL(data.webpage);
     }
 
     validateSources(data.sources, data);

@@ -59,6 +59,8 @@ To add custom content, the user provides a JSON object with the following keys:
   * `thumbnail`: An optional string specifying a URL for a thumbnail image of
     the content.  CyTube currently does not support displaying thumbnails in the
     playlist, but this functionality may be offered in the future.
+  * `webpage`: An optional string specifying a URL for a webpage to link to
+    when a user clicks on the playlist-item.
   * `sources`: A nonempty list of playable sources for the content.  The format
     is described below.
   * `textTracks`: An optional list of text tracks for subtitles or closed

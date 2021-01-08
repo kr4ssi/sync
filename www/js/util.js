@@ -55,7 +55,9 @@ function formatURL(data) {
         case "tc":
             return "https://clips.twitch.tv/" + data.id;
         case "cm":
-            return data.id;
+            return data.webpage || data.id;
+        case "cu":
+            return data.meta.embed.src;
         case "mx":
             return "https://mixer.com/" + data.meta.mixer.channelToken;
         default:
